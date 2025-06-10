@@ -120,9 +120,6 @@ const ImageComparisonApp: React.FC = () => {
           <h1 className="text-3xl font-bold text-gray-900 mb-4">
             ベクター vs ラスター画像 拡大比較
           </h1>
-          <p className="text-gray-600">
-            マウスホイールで拡大縮小、左クリック+ドラッグで移動できます
-          </p>
         </div>
 
         {/* 画像比較エリア（横並び） */}
@@ -213,8 +210,7 @@ const ImageComparisonApp: React.FC = () => {
             pros={[]}
             cons={[
               "拡大するとピクセレーションが発生",
-              "文字や細い線がぼやける",
-              "圧縮アーティファクトが目立つ"
+              "文字や細い線がぼやける"
             ]}
           >
             <img
