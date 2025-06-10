@@ -208,7 +208,7 @@ const ImageComparisonApp: React.FC = () => {
 
           {/* ラスター画像 */}
           <ImageViewer
-            title="ラスター画像（JPEG/PNG）"
+            title="ラスター画像（PNG）"
             color="red"
             pros={[]}
             cons={[
