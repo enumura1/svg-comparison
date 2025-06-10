@@ -203,12 +203,10 @@ const ImageComparisonApp: React.FC = () => {
               <g transform="translate(150, 240)">
                 <path d="M 20 5 L 24 16 L 35 16 L 26 24 L 30 35 L 20 28 L 10 35 L 14 24 L 5 16 L 16 16 Z" fill="#f59e0b" stroke="#d97706" strokeWidth="1" />
               </g>
-
-              {/* 注意書きテキストを削除（不要のため） */}
             </svg>
           </ImageViewer>
 
-          {/* ラスター画像プレースホルダー */}
+          {/* ラスター画像 */}
           <ImageViewer
             title="ラスター画像（JPEG/PNG）"
             color="red"
@@ -219,62 +217,17 @@ const ImageComparisonApp: React.FC = () => {
               "圧縮アーティファクトが目立つ"
             ]}
           >
-            <div
-              className="border border-gray-300 bg-gray-100 flex items-center justify-center"
-              style={{ width: 400, height: 500 }}
-            >
-              <div className="text-center text-gray-500">
-                <div className="text-lg font-medium mb-2">
-                  ラスター画像を配置
-                </div>
-                <div className="text-sm">
-                  上のSVGを変換した<br />
-                  JPEG/PNG画像をここに配置
-                </div>
-              </div>
-            </div>
+            <img
+              src="/images/svg_compare_test.png"
+              alt="ラスター画像比較"
+              style={{ width: 400, height: 300 }}
+              className="border border-gray-300"
+              onError={(e) => {
+                console.error('画像の読み込みに失敗しました');
+                e.currentTarget.style.display = 'none';
+              }}
+            />
           </ImageViewer>
-        </div>
-
-        {/* 説明セクション */}
-        <div className="bg-blue-50 rounded-lg p-6 mb-6">
-          <h2 className="text-xl font-semibold text-blue-900 mb-4">
-            画質の違いについて
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-blue-800">
-            <div>
-              <h3 className="font-medium mb-2">ベクター画像（SVG）</h3>
-              <ul className="space-y-1">
-                <li>• 数学的な計算で描画される</li>
-                <li>• 拡大しても劣化しない</li>
-                <li>• 文字や線がシャープ</li>
-                <li>• ファイルサイズが小さい</li>
-                <li>• アニメーションやインタラクティブ要素が可能</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-medium mb-2">ラスター画像（JPEG/PNG）</h3>
-              <ul className="space-y-1">
-                <li>• ピクセルの集合で構成される</li>
-                <li>• 拡大すると劣化する</li>
-                <li>• 圧縮によるアーティファクトが発生</li>
-                <li>• 写真に適している</li>
-                <li>• 複数の解像度が必要な場合がある</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* 使用方法 */}
-        <div className="bg-yellow-50 rounded-lg p-4">
-          <h3 className="font-medium text-yellow-800 mb-2">使用方法</h3>
-          <ol className="text-sm text-yellow-700 space-y-1">
-            <li>1. 左のベクター画像をJPEGまたはPNGに変換してください</li>
-            <li>2. 変換した画像を右側のプレースホルダーに配置してください</li>
-            <li>3. マウスホイールで拡大して画質の違いを確認してください</li>
-            <li>4. 左クリック+ドラッグで画像の詳細部分を見ることができます</li>
-            <li>5. 特に300%以上の拡大時に違いが顕著になります</li>
-          </ol>
         </div>
       </div>
     </div>
